@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Digital World</title>
+<link href ="/assets/stylesheets/style.css" rel="stylesheet" type="text/css" >
+</head>
+
+<body>
+
+  <% if(start.length!=0){%>
+    <% include ./partials/headerLogin.ejs %>
+    <% include ./partials/logout.ejs %>
+<% }
+else{%>
+  <% include ./partials/header.ejs %>
+  <% include ./partials/user_navigation.ejs %>
+<% }%>
+
+  <% include ./partials/site_navigation.ejs %>
+
+<main>
+  <ul class="Navigation">
+    <li><a href="/index">Home</a></li>
+			<li><a href="/categories">Categories</a></li>
+			<li>item</li>
+		 </ul>
+ <section>
+   <p><%= message %></p>
+       <article class="item">
+         <img src="<%=data._getImageURL%>" alt="<%=data._itemName%>" title="<%=data._itemName%>" width="130" height="190">
+         <article class="Description">
+           <p><%=data._itemName%></p>
+           <p><%=data._description%></p>
+           <p>Rating :  <%=data._rating%></p>
+         </article>
+      </article>
+
+
+      <button onClick="window.location.href = '/myItems?action=SaveIt&theItem=<%= data._itemCode%>'">SaveIt</button>
+ 	  <button onclick="window.location.href = '/myItems?action=RateIt&theItem=<%= data._itemCode%>'" >Rate It</button><br>
+<button onclick="location.href='/categories';" type="button" class="buttons" >Back To Categories</button><br>
+
+</section>
+</main>
+
+<% include ./partials/footer.ejs %>

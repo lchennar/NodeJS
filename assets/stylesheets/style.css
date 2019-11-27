@@ -1,0 +1,268 @@
+@charset"UTF=8";
+
+.header
+{
+	padding:10px;
+	color: purple;
+	background-color: lime;
+	border-style:solid;
+	border-width:1px;
+	border-color:black;
+
+}
+
+body{
+	height: 100vh;
+	width: 100%;
+	margin: 0;
+}
+
+#PersonalNav
+{   padding:5px;
+	background-color:Midnightblue;
+	margin-top:1px;
+	border:1px;
+	border-color:black;
+	border-width:1px;
+	text-align:center;
+	border-style:solid;
+  margin-bottom:1px;
+  font-size: 15px;
+	font-weight: bold;
+}
+
+#PersonalNav li {
+  display:inline;
+}
+
+#PersonalNav li+li:before{
+	color:white;
+	content:"|\00a0"
+
+
+}
+
+
+#generalPageNav {
+
+  padding:5px;
+  margin-top:0px;
+  font-size: 20px;
+  width:190px;
+  height:700px;
+  border-width:0px;
+  border-style:solid;
+  margin-bottom:1px;
+  margin-right:20px;
+	float:left;
+	border-bottom: 1px solid #333;
+
+
+}
+
+#generalPageNav li{
+	margin: 0 0 12px 0;
+
+}
+
+#generalPageNav a {
+    box-shadow: inset 0px 0px 200px 40px #659EC7;
+    color: #eee;
+    display:block
+		;
+    line-height: 2.5em;
+    padding: 0 10px 0 30px;
+    text-decoration: none;
+
+}
+
+main{
+  padding:5px;
+	margin-top:0px;
+
+	width:auto;
+	height:700px;
+	border-width:0px;
+	border-style:solid;
+	margin-bottom:1px;
+	box-shadow: inset 0px 0px 200px 40px #659EC7;
+
+}
+
+#PersonalNav li a{
+  color: white;
+}
+
+#generalPageNav li a{
+  color: white;
+	font-weight: bold;
+}
+
+section
+{   padding:10px;
+    margin:10px;
+
+
+}
+article
+{
+	margin-top:10px;
+  font-size: =30px;
+}
+
+a{
+  text-decoration: none;
+}
+
+ul{
+  list-style-type: none;
+}
+
+footer{
+  padding: 5px;
+  margin-top: 0px;
+  background-color: Midnightblue;
+color:white;
+position: fixed;
+bottom: 0;
+width: 100%;
+}
+
+.listofProducts ul li a{
+	  text-decoration: underline;
+		padding: 5px;
+		font-size: 20px
+
+
+}
+
+.listofProducts  li {
+	  display: inline;
+
+
+}
+
+.Type{
+	font-weight: bold;
+	font-size: 20px;
+	color: purple
+}
+
+.Navigation li{
+display:inline;
+list-style: none;
+}
+
+.Navigation li+li:before {
+    color: black;
+    content:">\00a0";
+}
+
+.Description h2{
+padding-left:25px;
+color: purple;
+font-size: 20px;
+margin-left: auto;
+}
+
+.Description{
+
+	padding: 5px;
+	color: purple
+}
+.item img{
+padding-right:  50px;
+padding-top: 1px;
+float: left;
+
+}
+
+#button {
+
+	display: inline;
+	list-style: none;
+	padding: 50px;
+	}
+.myReviewedItems{
+
+	border-collapse: collapse;
+}
+.myReviewedItems tr {
+	 border-bottom: 1px solid black;
+}
+td{
+	padding: 30px;
+}
+.myReviewedItems tr:last-child {
+  border: 0;
+}
+td a{
+	text-decoration: underline;
+}
+.buttons{
+	background-color: green;
+	border: none;
+	color: white
+	padding:1000px;
+}
+
+
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+
+}
+
+.header a {
+  color: black;
+  text-align: center;
+padding: -10px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 30px;
+  font-weight: bold;
+	color:Midnightblue;
+  padding-left: 6px;
+
+}
+
+.header img{
+	padding-left: 650px;
+	width: 50px;
+}
+
+
+
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.header-right a{
+	font-size: 15px;
+  float: right;
+	color: red;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .header-right {
+    float: none;
+  }
+}
+
+.star{
+	color:green;
+	height: 10px;
+width: 10px;
+}

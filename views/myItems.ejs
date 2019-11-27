@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Digital World</title>
+<link href ="/assets/stylesheets/style.css" rel="stylesheet" type="text/css" >
+</head>
+
+<body>
+  <% if(start.length!=0){%>
+    <% include ./partials/headerLogin.ejs %>
+    <% include ./partials/logout.ejs %>
+<% }
+else{%>
+  <% include ./partials/header.ejs %>
+  <% include ./partials/user_navigation.ejs %>
+<% }%>
+
+  <% include ./partials/site_navigation.ejs %>
+
+<main>
+
+  <ul class="Navigation">
+
+
+			<li>MyItems</li>
+		 </ul>
+<p><%= message %></p>
+<table class="myReviewedItems">
+ <tr>
+  <th>Item</th>
+  <th>Category</th>
+  <th>My Rating</th>
+
+  <th>Purchase</th>
+  <th></th>
+  <th></th>
+</tr>
+
+  <% if(allItems.length==0){
+    %>
+<p>No Items to display</p>
+  <% }
+
+  else {
+
+     for (var i=0;i< allItems.length;i++)
+  {%>
+
+  <tr>
+    <td><a href="/item?itemCode=<%= allItems[i].Item._itemCode%>"><%= allItems[i].Item._itemName %></a></td>
+    <td><%= allItems[i].Item._catalogCategory %></td>
+    <td><%= allItems[i].Rating %></td>
+    <td><%= allItems[i].madeIt %></td>
+    <td>
+
+    <button onClick="window.location.href = '/myItems?action=update&theItem=<%= allItems[i].Item._itemCode%>'">update</button>
+    <button onClick="window.location.href = '/myItems?action=delete&theItem=<%= allItems[i].Item._itemCode%>'">delete</button>
+      </td>
+
+
+
+  </tr>
+  <%}
+}%>
+
+</table>
+<button onclick="location.href='/categories';" type="button" class="buttons" >Back To Categories</button><br>
+<a href ="#">click here</a> to add a new product
+  </main>
+
+  <% include ./partials/footer.ejs %>

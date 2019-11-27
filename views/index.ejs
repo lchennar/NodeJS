@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+
+<head>
+<meta charset="UTF-8">
+<title>Digital World</title>
+
+<link href ="/assets/stylesheets/style.css" rel="stylesheet" type="text/css" >
+
+</head>
+
+<body>
+  <% if(start.length!=0){%>
+    <% include ./partials/headerLogin.ejs %>
+    <% include ./partials/logout.ejs %>
+<% }
+else{%>
+  <% include ./partials/header.ejs %>
+  <% include ./partials/user_navigation.ejs %>
+<% }%>
+
+  <% include ./partials/site_navigation.ejs %>
+
+
+<main>
+  <ul class="Navigation">
+    <li><a href="index.html">Home</a></li>
+         </ul>
+
+  <section>
+    <article>
+Welcome to the world of digital products. Now its easy to get reviews about a product and decide if that fits your specifications.
+</article>
+<article>
+Deciding on a product and getting it delivered at your door step is just ine click away.
+</article>
+</section>
+</main>
+
+<% include ./partials/footer.ejs %>
+
+
+</body>
+
+
+</html>

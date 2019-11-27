@@ -1,0 +1,64 @@
+
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Digital World</title>
+<link href ="/assets/stylesheets/style.css" rel="stylesheet" type="text/css" >
+</head>
+
+<body>
+
+  <% if(start.length!=0){%>
+    <% include ./partials/headerLogin.ejs %>
+    <% include ./partials/logout.ejs %>
+<% }
+else{%>
+  <% include ./partials/header.ejs %>
+  <% include ./partials/user_navigation.ejs %>
+<% }%>
+
+  <% include ./partials/site_navigation.ejs %>
+
+  <main>
+    <ul class="Navigation">
+      <li><a href="index">Home</a></li>
+  			<li><a href="categories">Categories</a></li>
+  			<li>item</li>
+  		 </ul>
+   <section>
+     <article class="item">
+       <img src="<%=allItems[0].Item._getImageURL%>" alt="<%=allItems[0].Item._itemName%>" title="<%=allItems[0].Item._itemName%>" width="130" height="190">
+       <article class="Description">
+         <p><%=allItems[0].Item._itemName%></p>
+         <p><%=allItems[0].Item._description%></p>
+         <p>Rating :  <%=allItems[0].Item._rating%></p>
+       </article>
+    </article>
+        <label> Rating</label>
+          <div class='Rating'>
+            <form method="POST" action="/action?action=feedback&theItem=<%= allItems[0].Item._itemCode%>">
+            <select name="rating" required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <input type="submit" value="Submit">
+          </form>
+</div>
+
+
+<form method="POST" action="/action?action=feedback&theItem=<%= allItems[0].Item._itemCode%>">
+  <input type="radio" name="madeIt" value="YES"> Yes
+  <input type="radio" name="madeIt" value="NO"> No
+  <input type="submit" value="Purchased It">
+</form>
+
+      <button onclick="location.href='myItems';" type="button" class="buttons" >Save It</button>
+   	  <button onclick="location.href='myItems';" type="button" class="buttons" >Rate It</button><br>
+
+   </section>
+  </main>
+<% include ./partials/footer.ejs %>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Digital World</title>
+<link href ="/assets/stylesheets/style.css" rel="stylesheet" type="text/css" >
+</head>
+
+<body>
+
+
+  <% if(start.length!=0){%>
+    <% include ./partials/headerLogin.ejs %>
+    <% include ./partials/logout.ejs %>
+<% }
+else{%>
+  <% include ./partials/header.ejs %>
+  <% include ./partials/user_navigation.ejs %>
+<% }%>
+
+  <% include ./partials/site_navigation.ejs %>
+<main>
+
+  <ul class="Navigation">
+    <li><a href="/index">Home</a></li>
+			<li>Categories</li>
+		 </ul>
+
+
+     <%var CategoryTypes=[];
+   data.forEach(function(element){%>
+
+    <% if(!CategoryTypes.includes(element.catalogCategory))
+     {
+       CategoryTypes.push(element.catalogCategory);%>
+
+     <%}
+   });%>
+
+   <%
+   while(CategoryTypes.length!=0)
+   {
+   var category=CategoryTypes[0];
+
+   CategoryTypes.splice(0,1);
+   %>
+
+
+   <h3> <%=category%></h3>
+
+   <%data.forEach(function(element){
+       if(element._catalogCategory === category){%>
+   <a href="/item?itemCode=<%=element._itemCode%>"><img src="<%=element._getImageURL%>" alt="<%=element._itemName%>" title="<%=element._itemName%>" style="width:120px;height:120px;border:0;"></a>
+
+
+   <%}%>
+   <%})}%>
+  </main>
+
+  <% include ./partials/footer.ejs %>
+
+</html>
